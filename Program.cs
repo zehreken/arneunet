@@ -21,9 +21,11 @@ namespace arneunet
 			}
 			
 			var matrix_ = MatrixUtility.Transpose(matrix);
+			var matrix__ = MatrixUtility.Transpose(matrix_);
 			
 			Console.WriteLine(matrix.ToPrintable());
 			Console.WriteLine(matrix_.ToPrintable());
+			Console.WriteLine(matrix__.ToPrintable());
 		}
 	}
 }
