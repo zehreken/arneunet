@@ -8,12 +8,22 @@ namespace arneunet
 	{
 		public static void Main(string[] args)
 		{
-			int rowCount = 10;
-			int columnCount = 10;
-			var matrix = new float[rowCount, columnCount];
-			matrix[1, 0] = 1;
+			int row = 2;
+			int column = 3;
+			var matrix = new float[row, column];
+
+			for (int i = 0; i < row; i++)
+			{
+				for (int j = 0; j < column; j++)
+				{
+					matrix[i, j] = i + ((i + 1) * j);
+				}
+			}
+			
+			var matrix_ = MatrixUtility.Transpose(matrix);
 			
 			Console.WriteLine(matrix.ToPrintable());
+			Console.WriteLine(matrix_.ToPrintable());
 		}
 	}
 }

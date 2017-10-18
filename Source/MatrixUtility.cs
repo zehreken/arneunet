@@ -1,5 +1,8 @@
 ﻿namespace arneunet.Source
 {
+	// In a matrix
+	// First index represents row
+	// Second index represents column
 	public static class MatrixUtility
 	{
 		public static T[,] Transpose<T>(T[,] matrix)
