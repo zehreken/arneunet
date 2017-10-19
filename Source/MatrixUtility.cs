@@ -1,4 +1,7 @@
-﻿namespace arneunet.Source
+﻿using System;
+using System.Runtime.CompilerServices;
+
+namespace arneunet.Source
 {
 	// In a matrix
 	// First index represents row
@@ -19,6 +22,29 @@
 			}
 
 			return transposed;
+		}
+
+		public static float[,] Sum(float[,] a, float[,] b)
+		{
+			var rowA = a.GetLength(0);
+			var columnA = a.GetLength(1);
+			var rowB = b.GetLength(0);
+			var columnB = b.GetLength(1);
+			if (rowA != rowB || columnA != columnB)
+			{
+				throw new Exception("Matrix dimensions don't match!");
+			}
+
+			var sum = new float[rowA, columnA];
+			for (int i = 0; i < rowA; i++)
+			{
+				for (int j = 0; j < columnA; j++)
+				{
+					sum[i, j] = a[i, j] + b[i, j];
+				}
+			}
+
+			return sum;
 		}
 
 		public static string ToPrintable<T>(this T[,] matrix)
