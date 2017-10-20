@@ -29,6 +29,9 @@ namespace arneunet
 
 			var sum = MatrixUtility.Sum(matrix, matrix__);
 			Console.WriteLine(sum.ToPrintable());
+
+			var product = MatrixUtility.Multiply(matrix, matrix_);
+			Console.WriteLine(product.ToPrintable());
 		}
 	}
 }

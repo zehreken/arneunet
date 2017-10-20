@@ -47,6 +47,33 @@ namespace arneunet.Source
 			return sum;
 		}
 
+		public static float[,] Multiply(float[,] a, float[,] b)
+		{
+			var rowA = a.GetLength(0);
+			var columnA = a.GetLength(1);
+			var rowB = b.GetLength(0);
+			var columnB = b.GetLength(1);
+
+			if (columnA != rowB)
+			{
+				throw new Exception("Matrix dimensions are not fit for multiplication!");
+			}
+
+			var product = new float[rowA, columnB];
+			for (int i = 0; i < rowA; i++)
+			{
+				for (int j = 0; j < rowB; j++)
+				{
+					for (int k = 0; k < columnB; k++)
+					{
+						product[i, k] += a[i, j] * b[j, k];
+					}
+				}
+			}
+
+			return product;
+		}
+
 		public static string ToPrintable<T>(this T[,] matrix)
 		{
 			var s = "printable\n";
